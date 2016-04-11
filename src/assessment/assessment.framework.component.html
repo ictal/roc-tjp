@@ -1,0 +1,30 @@
+<ol class="areas">
+    <li class="assessment-area" *ngFor="#area of framework.areas">
+        <header>
+            <span class="title">{{area.title}}</span>
+        </header>
+
+        <ol class="aspects">
+            <li class="assessment-aspect" *ngFor="#aspect of area.aspects">
+                <header>
+                    <span class="title">{{aspect.title}}</span>
+                </header>
+
+                <ol class="indicators">
+                    <li class="assessment-indicator" *ngFor="#indicator of aspect.indicators">
+                        <header>
+                            <span class="title">{{indicator.title}}</span>
+                        </header>
+                    </li>
+                </ol>
+            </li>
+
+        </ol>
+    </li>
+    <li class="new assessment-area">
+        <form (ngSubmit)="addArea();">
+            <input type="text" name="title">
+            <button type="submit">+</button>
+        </form>
+    </li>
+</ol>
